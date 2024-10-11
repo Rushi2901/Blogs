@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+  <!-- Featured Posts Section -->
+  <div class="container my-5">
+    <div class="row">
+
+      {% for item in post %}
+        {% if forloop.counter <= 6 %}
+        <div class="col-md-4" >
+            <a href="{%  url 'page'   item.sno item.slug %}" id="clickable_card">
+            <div class="card post-card" >
+              <img src="{{ item.image.url }}" alt="Post Image">
+              <div class="card-body">
+                <p class="post-category text-primary"> {{item.category |safe }} </p>
+                <h5 class="card-title"> {{item.title | safe}} </h5>
+                <p class="card-text"> {{ item.date  }} </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {% endif %}
+      {% endfor %}
+
+
+
+    </div>
+  </div>
+
+  <!-- Recent Posts Section -->
+
+
+  <div class="container">
+
+    <h2 class="my-5">Recent Posts</h2>
+    <div class="row">
+      {% for recent in recentPost %}
+      {% if forloop.counter <= 9 %}
+      <div class=" col-md-4 recent-post"> 
+      <a href="{%  url 'page'   recent.sno recent.slug %}" id="clickable_card"></a>
+      <div class="card">
+        <img src="{{ recent.image.url }}" alt="Recent Post Image">
+              <div class="card-body">
+                <p class="post-category {{ rand_choice }}">{{ recent.category }}</p>
+                <h5 class="card-title"> {{recent.title}} </h5>
+                <p class="card-text"> {{ recent.date }} </p>
+                <p class="post-description"> {{ recent.text | safe | truncatechars:100 }} </p>
+                <a href="/page" class="read-more">Read More</a>
+              </div>
+      </div>
+      </a>
+    </div>   
+            {% endif %} 
+            {% endfor %}
+
+
+
+
+      
+    </div> 
+  </div>
+
+      <!-- Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-4">
+        <li class="page-item">
+            <a class="page-link circle-button" href="{% url 'blog' %}"> All </a>
+        </li>
+    </ul>
+  </nav>
+
+
+  
+
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+    
+    {% load static %}
+
+     {% block body %}
+      
+
+
+
+     <div class="container">
+
+      <h2 class="my-5">All Posts</h2>
+      <div class="row">
+        {% for recent in cat_data %}
+        
+        <div class=" col-md-4 recent-post"> 
+        <a href="{%  url 'page'   recent.sno recent.slug %}" id="clickable_card">
+        <div class="card">
+          <img src="{{ recent.image.url }}" alt="Recent Post Image">
+                <div class="card-body">
+                  <p class="post-category {{ rand_choice }}">{{ recent.category }}</p>
+                  <h5 class="card-title"> {{recent.title}} </h5>
+                  <p class="card-text"> {{ recent.date }} </p>
+                  <p class="post-description"> {{ recent.text | safe | truncatechars:100 }} </p>
+                  <a href="/page" class="read-more">Read More</a>
+                </div>
+        </div>
+        </a>
+      </div>   
+          
+              {% endfor %}
+  
+  
+  
+  
+        
+      </div> 
+    </div>
+  
+
+
+
+    
+      {% endblock body %}

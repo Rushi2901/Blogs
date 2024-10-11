@@ -1,0 +1,316 @@
+/* Ensure html and body take full height */
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+}
+
+/* Use flexbox layout on body */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main content area flexible */
+main {
+  flex: 1; /* Allows the main area to grow and fill available space */
+}
+
+/* Your existing footer styles remain the same */
+footer {
+  background-color: #333; /* Dark grey background */
+  color: #fff; /* White text for contrast */
+  padding: 20px 0; /* Add some padding for spacing within the footer */
+  text-align: center; /* Optional: center text */
+}
+
+
+/* Custom styles for post card images */
+
+.post-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Navbar link styles */
+  .navbar-nav .nav-link {
+    margin-right: 15px;
+  }
+  
+  /* Post category styling */
+  .post-category {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Dark footer */
+  footer {
+    background-color: #343a40; /* Darker background */
+    color: #f8f9fa; /* Light text */
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+  
+  /* Footer links */
+  .footer-links a {
+    color: #f8f9fa;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    color: #adb5bd;
+  }
+  
+  /* Recent post image styling */
+  .recent-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Styling for recent post description and layout */
+  .post-category {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .post-description {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+  }
+  
+  .read-more {
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  /* Category header */
+  .category-header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  /* Post title styling */
+  .post-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Post meta styling */
+  .post-meta {
+    font-size: 0.875rem;
+    color: gray;
+  }
+  
+  /* Post content styling */
+  .post-content {
+    margin-bottom: 20px;
+  }
+  
+  /* Pagination styling */
+  .pagination {
+    justify-content: center;
+  }
+  
+  /* Light footer (additional section for consistency) */
+
+  /* Add margin to the recent posts section */
+.recent-posts {
+    margin-bottom: 30px; /* Adjust the value as needed */
+}
+
+/* Footer styling */
+footer {
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* White text for contrast */
+    padding: 20px 0; /* Add some padding for spacing within the footer */
+    text-align: center; /* Optional: center text */
+}
+
+/* Optional: Additional styling for footer links */
+footer a {
+    color: #aaa3a3; /* Ensure footer links are visible */
+    text-decoration: none; /* Optional: remove underline from links */
+}
+
+footer a:hover {
+    color: #ccc; /* Lighten the color on hover */
+}
+
+
+  
+  /* Post card image adjustments */
+  .post-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Card body padding */
+  .card-body {
+    padding: 20px;
+  }
+  
+
+
+  /* Tag styles */
+  .post-category {
+    margin-top: 15px;
+  }
+  
+  .badge {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    background-image: url('hero-image.jpg'); /* replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  /* Post content images */
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  /* contact page   */
+
+     /* Fullscreen background for hero section */
+     .site-cover {
+      height: 100vh; /* Full viewport height */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Dark overlay for better text contrast */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Text content styling */
+    .content {
+      text-align: center;
+      color: white;
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .content p {
+      font-size: 1.2rem;
+    }
+
+    /* Styling for form and address */
+    .bg-white {
+      border-radius: 5px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+
+
+#clickable_card{
+  
+    text-decoration: none;  
+    color: inherit;         
+}
+  
+#clickable-card:hover, 
+#clickable-card:focus, 
+#clickable-card:active {
+  text-decoration: none; 
+  color: inherit;      
+}
+
+
+.pagination {
+  justify-content: center; /* Center the pagination */
+}
+
+.circle-button {
+  width: 40px; /* Adjust width */
+  height: 40px; /* Adjust height */
+  background-color: rgb(165, 164, 205); /* Background color */
+  color: white; /* Text color */
+  border-radius: 50%; /* Makes it circular */
+  display: flex; /* Center text */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove border */
+}
+
+.circle-button:hover {
+  background-color: rgba(98, 98, 172, 0.325); /* Darker blue on hover */
+}
+
+.page-link {
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+
+
+.full-screen-bg {
+  background: url('static\images\image.png') no-repeat center center fixed; /* Make sure the path is correct */
+  background-size: cover; /* Ensure the background covers the entire screen */
+  min-height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+}
+
+#no_data {
+  background-image: url('images/image.png'); /* Use forward slashes */
+  background-repeat: no-repeat; /* Specify that it should not repeat */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Fix the background */
+  background-size: cover; /* Ensure the background covers the entire screen */
+  min-height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+<body>
+
+
+    <!-- Hero Section -->
+    <div>
+        <div class="hero" id="blog_hero_section"  style="background-image: url('{{ post.image.url }}'); height: 90vh; ">
+        
+        </div>
+        <div class="hero-text p-4 mt-3">
+            <span class="badge bg-success">{{ post.category.title }}</span>
+            <h1 class="display-5"> {{ post.title  | safe}} </h1>
+            <p> {{ post.date }} </p>
+        </div>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Blog Post -->
+            <div class="col-lg-8">
+                <p> {{ post.text | safe}} </p>
+                
+                <!-- Comments Section -->
+                <div class="comments-section mt-5">
+                    <h2>Comments</h2>
+                    {% for comments in comment_data %}
+                    <div class="comment mb-4">
+                        <div class="d-flex">
+                             <div>
+                                <h6>{{ comments.name }}</h6>
+                                <p> {{ comments.message }} </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                    <!-- Repeat similar structure for more comments -->
+
+                    <!-- Comment Form -->
+                    <h4 class="mt-5">Leave a Comment</h4>
+                    <form action="{% url 'page' post.sno post.slug %}" method="Post" >
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email"  name="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="website" class="form-label">Website</label>
+                            <input type="text" name="website" class="form-control" id="website" required>
+                        </div>
+
+                        <input type="hidden" name="postsno" class="form-control" id="website"  value="{{ post.sno }}" required>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" name="message"  id="comment" rows="4"></textarea required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+
+   
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="author-info text-center">
+                    <img src="author.jpg" alt="Author" class="rounded-circle" style="width:100px;">
+                    <h4>Craig David</h4>
+                    <p>Author and Blogger</p>
+                    <a href="#" class="btn btn-primary">Follow</a>
+                </div>
+
+                <!-- latest Posts -->
+                <div class="popular-posts mt-5">
+                    <h4>latest Posts</h4>
+                    <ul class="list-group">
+                        {% for item in recentPost %}
+                        {% if forloop.counter <= 3 %}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="{{ item.image.url }}" alt="Post 1" class="img-fluid">
+                                </div>
+                                <div class="col-8">
+                                    <h5><a href="{% url 'page' item.sno item.slug %}"> {{ item.title }} </a></h5>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

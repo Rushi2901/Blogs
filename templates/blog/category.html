@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<style>
+
+.full-screen-bg {
+  background-image: url(' ') no-repeat center center fixed; /* Make sure the path is correct */
+  background-size: cover; /* Ensure the background covers the entire screen */
+  min-height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+}
+
+</style>
+
+<body>
+
+  <!-- Category Section -->
+   {% if cat_data %}
+  <section class="category-header container">
+    <h6 class="text-muted">Category</h6> <!-- Category subheader -->
+    <h2 class="fw-bold">{{ cat_data.0.category }}</h2> <!-- Main category -->
+    <p>Category description here... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam error eius quo, officiis non maxime quos reiciendis perferendis doloreque maiores!</p>
+  </section>
+
+  <!-- Blog Post Grid -->
+  <div class="container">
+
+    
+    <div class="row">
+      {% for recent in cat_data %}
+      
+      <div class=" col-md-4 recent-post"> 
+      <a href="{%  url 'page'   recent.sno recent.slug %}" id="clickable_card">
+      <div class="card">
+        <img src="{{ recent.image.url }}" alt="Recent Post Image">
+              <div class="card-body">
+                <p class="post-category {{ rand_choice }}">{{ recent.category }}</p>
+                <h5 class="card-title"> {{recent.title}} </h5>
+                <p class="card-text"> {{ recent.date }} </p>
+                <p class="post-description"> {{ recent.text | safe | truncatechars:100 }} </p>
+                <a href="/page" class="read-more">Read More</a>
+              </div>
+      </div>
+      </a>
+    </div>   
+   
+            {% endfor %}
+
+
+    </div> 
+  </div>
+
+
+
+
+  </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center mt-4">
+              <li class="page-item">
+                  <a class="page-link circle-button" href="{% url 'blog' %}"> All </a>
+              </li>
+          </ul>
+        </nav>
+
+{% else %}
+
+        <section class="full-screen-bg d-flex justify-content-center align-items-center text-light " id="no_data" >
+          <div class="container text-center bg-dark bg-opacity-50 p-5 rounded">
+            <h1>No posts available in this category</h1>
+            <p class="lead">Please check back later or explore other categories.</p>
+            <a href="/home" class="btn btn-primary">Go to Homepage</a>
+          </div>
+        </section>
+{% endif %}
+  
+
+
+  {% endblock body %}
