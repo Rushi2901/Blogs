@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-%fo^(8enn90xzinfex51@6r*jf-rtby$brb02!rx)5+=cr@7au
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',          # localhost
+    'localhost',          # Also allow localhost
+    'Blogs-0ac8.onrender.com' , 
+]
 
 
 # Application definition
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Blogs.urls'
