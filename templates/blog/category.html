@@ -2,16 +2,6 @@
 {% load static %}
 {% block body %}
 
-<style>
-
-.full-screen-bg {
-  background-image: url(' ') no-repeat center center fixed; /* Make sure the path is correct */
-  background-size: cover; /* Ensure the background covers the entire screen */
-  min-height: 100vh; /* Full screen height */
-  width: 100vw; /* Full screen width */
-}
-
-</style>
 
 <body>
 
@@ -20,20 +10,20 @@
   <section class="category-header container">
     <h6 class="text-muted">Category</h6> <!-- Category subheader -->
     <h2 class="fw-bold">{{ cat_data.0.category }}</h2> <!-- Main category -->
-    <p>Category description here... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam error eius quo, officiis non maxime quos reiciendis perferendis doloreque maiores!</p>
+    
   </section>
 
   <!-- Blog Post Grid -->
   <div class="container">
 
-    
+<!--     
     <div class="row">
       {% for recent in cat_data %}
       
       <div class=" col-md-4 recent-post"> 
       <a href="{%  url 'page'   recent.sno recent.slug %}" id="clickable_card">
       <div class="card">
-        <img src="{{ recent.image.url }}" alt="Recent Post Image">
+        <img src="{{ recent.image.url | safe}}" alt="Recent Post Image">
               <div class="card-body">
                 <p class="post-category {{ rand_choice }}">{{ recent.category }}</p>
                 <h5 class="card-title"> {{recent.title}} </h5>
@@ -49,8 +39,37 @@
 
 
     </div> 
-  </div>
+  </div> -->
 
+
+  <div class="container">
+    <div class="row">
+      {% for recent in cat_data %}
+
+      <div class=" col-md-4 recent-post"> 
+      
+      <div class="card">
+        <a href="{%  url 'page'   recent.sno recent.slug %}"  style="text-decoration: none; color: inherit; ">
+        <img src="{{ recent.image.url| safe }}" alt="Recent Post Image">
+
+              <div class="card-body">
+                <p class="post-category {{ rand_choice }}">{{ recent.category }}</p>
+                <h5 class="card-title"> {{recent.title}} </h5>
+                <p class="card-text"> {{ recent.date }} </p>
+                <p class="post-description"> {{ recent.text | safe | truncatechars:100 }} </p>
+                <span href="/page" class="read-more">Read More</span>
+              </div>
+              </a>
+            
+      </div>
+      </a>
+    </div>   
+          
+            {% endfor %}
+
+
+    </div> 
+  </div>
 
 
 

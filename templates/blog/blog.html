@@ -11,10 +11,10 @@
 
       <h2 class="my-5">All Posts</h2>
       <div class="row">
-        {% for recent in cat_data %}
+        {% for recent in recentPost %}
         
         <div class=" col-md-4 recent-post"> 
-        <a href="{%  url 'page'   recent.sno recent.slug %}" id="clickable_card">
+        <a href="{%  url 'page'   recent.sno recent.slug %}" style="text-decoration: none; color: inherit; ">
         <div class="card">
           <img src="{{ recent.image.url }}" alt="Recent Post Image">
                 <div class="card-body">

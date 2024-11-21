@@ -15,6 +15,23 @@ main {
   flex: 1; /* Allows the main area to grow and fill available space */
 }
 
+
+/* Make navbar sticky at the top */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures it stays above other content */
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+/* Initial color of the navbar */
+.navbar {
+  background-color: #75808b; /* Light background */
+}
+
+
+
+
 /* Your existing footer styles remain the same */
 footer {
   background-color: #333; /* Dark grey background */
@@ -141,15 +158,15 @@ footer {
 }
 
 /* Footer styling */
-footer {
-    background-color: #333; /* Dark grey background */
+.footer {
+    background-color: #373434; /* Dark grey background */
     color: #fff; /* White text for contrast */
     padding: 20px 0; /* Add some padding for spacing within the footer */
     text-align: center; /* Optional: center text */
 }
 
 /* Optional: Additional styling for footer links */
-footer a {
+.footer a {
     color: #aaa3a3; /* Ensure footer links are visible */
     text-decoration: none; /* Optional: remove underline from links */
 }
@@ -256,18 +273,6 @@ footer a:hover {
     }
 
 
-#clickable_card{
-  
-    text-decoration: none;  
-    color: inherit;         
-}
-  
-#clickable-card:hover, 
-#clickable-card:focus, 
-#clickable-card:active {
-  text-decoration: none; 
-  color: inherit;      
-}
 
 
 .pagination {

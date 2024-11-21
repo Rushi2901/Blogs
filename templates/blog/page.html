@@ -8,7 +8,11 @@
 
     <!-- Hero Section -->
     <div>
-        <div class="hero" id="blog_hero_section"  style="background-image: url('{{ post.image.url }}'); height: 90vh; ">
+        <div class="hero" id="blog_hero_section"  style="background-image: url('{{ post.image.url|safe }}'); height: 90vh;  
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+     ">
         
         </div>
         <div class="hero-text p-4 mt-3">
@@ -74,12 +78,7 @@
 
             <!-- Sidebar -->
             <div class="col-lg-4">
-                <div class="author-info text-center">
-                    <img src="author.jpg" alt="Author" class="rounded-circle" style="width:100px;">
-                    <h4>Craig David</h4>
-                    <p>Author and Blogger</p>
-                    <a href="#" class="btn btn-primary">Follow</a>
-                </div>
+                
 
                 <!-- latest Posts -->
                 <div class="popular-posts mt-5">
