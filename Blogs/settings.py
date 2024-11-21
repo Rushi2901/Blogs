@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',          # localhost
     'localhost',          # Also allow localhost
-    'Blogs-0ac8.onrender.com' , 
+    'blogs-lv4m.onrender.com' , 
 ]
 
 
