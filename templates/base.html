@@ -40,15 +40,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="/blog">Blogs</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-              </li>
+              
               <!-- Dynamic Categories -->
               {% for cat in category %}
               <li class="nav-item">
                 <a class="nav-link" href="/?category={{ cat.sno | safe }}">{{ cat.title | safe }}</a>
               </li>
               {% endfor %}
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
