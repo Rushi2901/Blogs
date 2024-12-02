@@ -14,7 +14,7 @@ class Home (models.Model):
     address =  models.CharField(max_length=255,blank=True,null=True)
     phone=  models.CharField(max_length=255,blank=True,null=True)
     email= models.CharField(max_length=255,blank=True,null=True)
-    contact_img=models.ImageField(upload_to='images' , blank=True,null=True)
+    contact_img=models.ImageField(upload_to='Blog_website_img',storage=MediaCloudinaryStorage() , blank=True,null=True)
     contact_headline=models.CharField(max_length=255,blank=True,null=True)
     def __str__(self) -> str:
         return self.title
