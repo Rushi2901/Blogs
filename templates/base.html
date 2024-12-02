@@ -17,38 +17,44 @@
   </head>
   <body>
 
-  <header>
-     <!-- Navigation Bar -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-navbar">
-  <div class="container">
-    {% for post in home %}
-    <a class="navbar-brand" href="/home">{{post.title}}</a>
-    {% endfor %}
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        {% for cat in category %}
-        <li class="nav-item">
-          <a class="nav-link" href="/?category={{ cat.sno | safe }}"> {{ cat.title | safe }} </a>
-        </li>
-        {% endfor %}
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
+    <header>
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+          <!-- Dynamic Site Title -->
+          {% for post in home %}
+          <a class="navbar-brand" href="/home">{{ post.title }}</a>
+          {% endfor %}
+          
+          <!-- Navbar Toggler for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!-- Collapsible Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <!-- Dynamic Categories -->
+              {% for cat in category %}
+              <li class="nav-item">
+                <a class="nav-link" href="/?category={{ cat.sno | safe }}">{{ cat.title | safe }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
 
 </header>
 

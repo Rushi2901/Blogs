@@ -319,3 +319,10 @@ footer a:hover {
   min-height: 100vh; /* Full screen height */
   width: 100vw; /* Full screen width */
 }
+
+p img {
+  max-width: 100% !important ;
+  height: auto !important;
+
+  
+}

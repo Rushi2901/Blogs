@@ -3,9 +3,7 @@
 {% block body %}
 
 
-<body>
-
-
+<div class="container-fluid">
     <!-- Hero Section -->
     <div>
         <div class="hero" id="blog_hero_section"  style="background-image: url('{{ post.image.url|safe }}'); height: 90vh;  
@@ -24,11 +22,11 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container mt-5">
+   
         <div class="row">
             <!-- Blog Post -->
-            <div class="col-lg-8">
-                <p> {{ post.text | safe}} </p>
+            <div class="col-lg-8 .img-fluid">
+                <p > {{ post.text | safe}} </p>
                 
                 <!-- Comments Section -->
                 <div class="comments-section mt-5">
@@ -105,6 +103,6 @@
 
             </div>
         </div>
-    </div>
-
+    
+</div>
 {% endblock body %}
