@@ -92,8 +92,8 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABSE_URL')
+    'default': dj_database_url.parse(
+        'postgresql://neondb_owner:uY1ZoX3mlqOG@ep-polished-sunset-a1lmk2u4.ap-southeast-1.aws.neon.tech/BLOG_website?sslmode=require'
     )
 }
 

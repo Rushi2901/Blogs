@@ -51,7 +51,6 @@ def page (request ,sno,slug):
         name=request.POST['name']
         email=request.POST['email']
         postsno=request.POST.get('postsno')
-        website=request.POST['website']
         message = request.POST['message']
 
         post_data = Post.objects.filter(sno=postsno)[0]
@@ -59,7 +58,6 @@ def page (request ,sno,slug):
             name=name,
             email=email,
             post=post_data,
-            website=website,
             message=message
         )
         comment.save()
